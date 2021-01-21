@@ -1,9 +1,9 @@
 import React from 'react';
 // import { Redirect } from 'react-router-dom';
 
-const SearchResultSingle = ({single}) => {
+const SearchResultSingle = (props, {single}) => {
 
-  console.log('single', single)
+  console.log('single', single, props)
 
   // const results = searchResults.length === 0 ? [] : searchResults.data.map((result,i) => {
   //   return (

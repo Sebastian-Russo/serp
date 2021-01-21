@@ -7,7 +7,7 @@ const SearchResults = ({searchResults = [], handleClick}) => {
     const thumbnail = result.clip.pictures.sizes[3].link
     const date = new Date(result.clip.created_time).getFullYear();
     return (
-        <div key={i}>
+        <div key={i} onClick={()=>handleClick(result)}>
           <Link to={`/${result.clip.name}`}>
             <div className="thumbnail hover-wrapper">
                 <img src={thumbnail} alt="thumbnail" width="300px"/>
@@ -19,9 +19,8 @@ const SearchResults = ({searchResults = [], handleClick}) => {
             <div className="result">
               <div>{result.clip.name}</div>
               <div>{result.clip.user.name}</div>
-              <div>Views</div> 
+              <div>Views {result.clip.stats.plays}</div> 
             </div>
-            <button onClick={()=>handleClick(result)}>Click</button>
           </Link>
         </div>
     )
