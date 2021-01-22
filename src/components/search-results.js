@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SearchResults = ({searchResults = [], handleClick}) => {
+const SearchResults = ({searchResults = [], handleClick, searchTerm}) => {
 
   const results = searchResults.length === 0 ? [] : searchResults.data.map((result,i) => {
     const thumbnail = result.clip.pictures.sizes[3].link
     const date = new Date(result.clip.created_time).getFullYear();
     return (
         <div key={i} onClick={()=>handleClick(result)}>
-          <Link to={`/${result.clip.name}`}>
+          <Link to={`/${searchTerm}/${result.clip.name}`}>
             <div className="thumbnail hover-wrapper">
                 <img src={thumbnail} alt="thumbnail" width="300px"/>
                 <div className="hover">

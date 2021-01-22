@@ -3,17 +3,16 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SearchForm from './search-form';
 import SearchResults from './search-results';
-import SearchResultSingle from './search-result-single';
 import Child from "./child";
 
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
-  const [child, setChild] = useState('')
-  const [single, setSingle] = useState([]);
+  const [searchTerm, setsearchTerm] = useState('')
+  const [single, setSingle] = useState();
 
   const fetchData = async (searchTerm) => {
-    setChild(searchTerm)
+    setsearchTerm(searchTerm)
     try {
       const { data } = await axios.get(`/data/${searchTerm}.json`)
       console.log(data)
@@ -27,9 +26,9 @@ function App() {
   }
 
   // next step, pass props through to signle reults component 
-  const handleClick = single => {
-    console.log('click', single)
-    setSingle(single)
+  const handleClick = data => {
+    console.log('click', data.clip)
+    setSingle(data.clip)
   }
 
   // use render method, which passes in a function to be called when the location matches
@@ -37,23 +36,16 @@ function App() {
     <Router>
       <div>
         <SearchForm fetchData={fetchData}/>
-        <Child child={child} />
+        <Child searchTerm={searchTerm} />
         <Switch>
           <Route 
             path="/" 
             render={props=>
               <SearchResults {...props} 
               searchResults={searchResults}
+              searchTerm={searchTerm}
               handleClick={handleClick}/>
             } 
-          />
-          <Route 
-            path="/:id" 
-            children={props=>
-              <SearchResultSingle {...props}
-              searchResults={searchResults}
-              single={single}/>
-            }
           />
         </Switch>
       </div>
