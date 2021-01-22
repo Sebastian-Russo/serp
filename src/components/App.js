@@ -26,7 +26,7 @@ function App() {
     }
   }
 
-  // ******************** ISSUE cannot get props to send to search reulst single component **/
+  // next step, pass props through to signle reults component 
   const handleClick = single => {
     console.log('click', single)
     setSingle(single)
