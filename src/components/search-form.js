@@ -8,7 +8,7 @@ const SearchForm = ({fetchData}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchData(searchTerm)
-    history.push(`q?=${searchTerm}`)
+    history.push(`/${searchTerm}`)
     setSearchTerm('')
   };
 

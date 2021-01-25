@@ -1,10 +1,10 @@
 import React from 'react'; 
 
-const Child = ({child}) => {
+const Child = ({searchTerm}) => {
   return (
     <>
-      {child ? (
-        <div>You've searched for {child}</div>
+      {searchTerm ? (
+        <div>You've searched for {searchTerm}</div>
       ) : (
         <div>Please make a search</div>
       )}
