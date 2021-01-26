@@ -1,12 +1,11 @@
 import React from 'react';
-import ReactPlayer from 'react-player';
+import ResponsivePlayer from './responsive-player';
 import './search-results.css';
-// import { Redirect } from 'react-router-dom';
 
 const SearchResultSingle = ({single}) => {
   console.log(single)
   
-  const video = single.uri 
+  const { url } = single; 
 
   return ( 
      <div>
@@ -14,11 +13,10 @@ const SearchResultSingle = ({single}) => {
         <div>{single.name}</div>
         <div>{single.user.name}</div>
         <div>
-        <ReactPlayer url="https://vimeo.com/video/162413069" />
-            {/* <ReactPlayer url={`https://vimeo.com/${video}`} /> */}
-            {/* <video key={video}>
-              <source src={`https://vimeo.com/${video}`} />
-            </video> */}
+            <ResponsivePlayer 
+              url={url}
+              controls={true}
+            />
         </div>
         <div>Duration: {single.duration}</div>
         <div>Views {single.stats.plays}</div>
