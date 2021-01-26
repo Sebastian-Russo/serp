@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/vimeo';
 import './responsive-player.css';
 
 
@@ -13,6 +13,7 @@ const ResponsivePlayer = ({url}) => {
         url='https://vimeo.com/162413069'
         width='100%'
         height='100%'
+        controls={true}
         // onProgress={onProgress}
       />
     </div>

@@ -15,7 +15,6 @@ const SearchResultSingle = ({single}) => {
         <div>
             <ResponsivePlayer 
               url={url}
-              controls={true}
             />
         </div>
         <div>Duration: {single.duration}</div>
