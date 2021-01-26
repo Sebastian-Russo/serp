@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'; 
+import './search-form.css';
 
 const SearchForm = ({fetchData}) => {
   const [searchTerm, setSearchTerm] = useState(''); 

@@ -38,7 +38,7 @@ function App() {
         <Switch>
           
           <Route 
-          exact
+            exact
             path="/:search" 
             render={props=>
               <SearchResults {...props} 
