@@ -2,13 +2,13 @@ import React from 'react';
 
 const Child = ({searchTerm}) => {
   return (
-    <>
+    <div className="container">
       {searchTerm ? (
-        <div className="container">You've searched for {searchTerm}</div>
+        <div>You've searched for {searchTerm}</div>
       ) : (
         <div>Please make a search</div>
       )}
-    </>
+    </div>
   );
 };
 

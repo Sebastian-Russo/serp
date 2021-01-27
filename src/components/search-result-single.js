@@ -1,20 +1,22 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import ResponsivePlayer from './responsive-player';
 import './search-results.css';
 
 const SearchResultSingle = ({single}) => {
-  console.log(single)
+  console.log(single.uri)
   
-  const { url } = single; 
+  const { uri } = single; 
+
+  const history = useHistory();
 
   return ( 
-     <div>
-        <div className="container">
+      <div className="container">
         <div>{single.name}</div>
         <div>{single.user.name}</div>
         <div>
             <ResponsivePlayer 
-              url={url}
+              uri={uri}
             />
         </div>
         <div>Duration: {single.duration}</div>
@@ -22,7 +24,7 @@ const SearchResultSingle = ({single}) => {
         <div>Location: {single.user.location}</div>
         <div>Comments: {single.metadata.connections.comments.total}</div>
         <div>Description: {single.description}</div>
-        </div>
+        <button onClick={() => history.goBack()}>Back</button>
       </div>
   );
 }
