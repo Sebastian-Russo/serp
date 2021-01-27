@@ -4,7 +4,7 @@ const Child = ({searchTerm}) => {
   return (
     <>
       {searchTerm ? (
-        <div>You've searched for {searchTerm}</div>
+        <div className="container">You've searched for {searchTerm}</div>
       ) : (
         <div>Please make a search</div>
       )}

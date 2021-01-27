@@ -29,7 +29,7 @@ const SearchResults = ({searchResults = [], handleClick, searchTerm}) => {
   const resultNumber = searchResults.total === undefined ? 0 : searchResults.total
 
   return ( 
-    <div>
+    <div className="container">
       <h2>Results {resultNumber}</h2>
       <div className="container results">
         {results}
