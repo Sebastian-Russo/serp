@@ -6,7 +6,10 @@ const Child = ({searchTerm}) => {
       {searchTerm ? (
         <div>You've searched for {searchTerm}</div>
       ) : (
-        <div>Please make a search</div>
+        <div>
+          <div>Please make a search</div>
+          <div>"Travel", "Animation", or "Example"</div>
+        </div>
       )}
     </div>
   );
