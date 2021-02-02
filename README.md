@@ -3,7 +3,7 @@ I made this app in response to a chanlge requested by Vimeo.
 To start up the app, $ npm run go
 This will install any dependencies, then start the app.
 Otherwise, $ npm start
-Will simple start up the app.
+Will simply start up the app.
 
 **_ 3 query results user can search from _**
 travel
